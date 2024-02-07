@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package auth;
+
+//option go_package = "github.com/Antoha2/etodo";
+option go_package = ".";
+
+service TaskService {
+   rpc GetRoles (GetRolesRequest) returns (GetRolesResponse);
+   rpc ParseToken (ParseTokenRequest) returns (ParseTokenResponse); 
+}
+
+message GetRolesRequest {
+   int32 Id = 1;
+}
+  
+message GetRolesResponse {
+   repeated string Roles = 1; 
+}
+  
+message ParseTokenRequest {
+   string Token = 1;
+}
+  
+message ParseTokenResponse {
+   int32 Id = 1;
+}
+     
